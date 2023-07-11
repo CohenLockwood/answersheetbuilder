@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Practice Aptitude Test</title>
+</head>
+<template>
+    <div class="section" id="sectionTemplate" draggable="true">
+        <div class="section-heading">
+            <h2>Section</h2>
+            <input type="text" id="sectionTitle" placeholder="Section Title">
+        </div>
+        <div class="section-body">
+            <div class="time">
+                <input type="number" id="time" placeholder="00" value="60">
+                <p>min</p>
+            </div>
+
+            <div class="items" onerror="addNewItemHere(this); console.log('load')">
+                
+            </div>
+
+            <button onclick="addNewItem(this)">Add New Item</button>
+        </div>
+    </div>
+    <div class="item" id="itemTemplate" draggable="true" ondrag="">
+        <div class="item-heading">
+            <div>
+                <input type="text" placeholder="0, 0-0" class="item-no" id="itemNo">
+                <div class="select" onclick="selectItemType()">Multiple-Choiced</div>
+            </div>
+            <button class="icon" onclick="this.parentElement.parentElement.remove()">&#xE74D;</button>
+        </div>
+        <div class="corousel multiple-choiced" data-selected="0">
+            <button onclick="preChoice(this)">&#xE09A;</button>
+            <div class="choice one" data-display="flex" style="display: flex">
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+                <div>D</div>
+            </div>
+            <div class="choice two" data-display="flex">
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+                <div>D</div>
+                <div>E</div>
+            </div>
+            <div class="choice three" data-display="flex">
+                <div>F</div>
+                <div>G</div>
+                <div>H</div>
+                <div>I</div>
+                <div>J</div>
+            </div>
+            <div class="choice three" data-display="flex">
+                <div>J</div>
+                <div>K</div>
+                <div>L</div>
+                <div>M</div>
+                <div>N</div>
+            </div>
+            <button onclick="nexChoice(this)">&#xE09B;</button>
+        </div>
+    </div>
+
+
+    <div class="multiple-choiced" id="multipleChoicedTypeTwo">
+        <p class="item-no"></p>
+        <div class="choice two">
+            <div onclick="blacken(this)">A</div>
+            <div onclick="blacken(this)">B</div>
+            <div onclick="blacken(this)">C</div>
+            <div onclick="blacken(this)">D</div>
+            <div onclick="blacken(this)">E</div>
+        </div>
+    </div>
+</template>
+
+<body>
+    <div id="answerSheetBuilder">
+        <h1>Answer Sheet Builder</h1>
+
+        <section>
+            
+        </section>
+    
+        <button onclick="addNewSection()">New Section</button>
+        <button class="secondary" onclick="writeData()">Next <span class="icon">&#xE111;</span></button>
+    </div>
+
+    <div id="testProper" style="display: none">
+        <section>
+            <div class="section-heading">
+                <h1>Language Proficiency</h1>
+                <p>Section I</p>
+            </div>
+            <p class="timer">00:00</p>
+            <div class="items">
+                
+            </div>
+        </section>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

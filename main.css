@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'Icon';
+    src: url('./Segoe Fluent Icons.ttf');
+}
+
+:root {
+    --gray: rgb(142, 142, 147);
+    --gray2: rgb(174, 174, 178);
+    --gray3: rgb(199, 199, 194);
+    --gray4: rgb(209, 209, 214);
+    --gray5: rgb(229, 229, 234);
+    --gray6: rgb(242, 242, 247);
+    --gray7: rgb(250, 250, 255);
+    --black: rgb(28, 28, 30);
+    --black2: rgb(44, 44, 46);
+    --black3: rgb(58, 58, 60);
+    --black4: rgb(72, 72, 74);
+    --black5: rgb(99, 99, 92);
+    --accent: rgb(0, 122, 255);
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--black);
+}
+
+body {
+    margin: 3rem 5rem;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+input {
+    border-radius: 5px;
+    border: solid 1px transparent;
+    padding: 0;
+    outline: none;
+    background: transparent;
+    font-size: 1em;
+}
+
+input::placeholder {
+    color: var(--gray);
+}
+
+input:hover, input:focus {
+    background-color: var(--gray7);
+    border-color: var(--gray6);
+    padding: 0.5em;
+    margin: -0.5em;
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    background-color: var(--black);
+    color: white;
+    padding: 0.5em 2em;
+    margin: 1em auto;
+    display: block;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    text-transform: capitalize;
+}
+
+button.secondary {
+    padding: 0;
+    margin: 0;
+    color: var(--black);
+    background-color: transparent;
+}
+
+#answerSheetBuilder .section {
+    padding: 5rem 10rem;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#answerSheetBuilder .section-heading {
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+#answerSheetBuilder .section-body {
+    border-left: solid 1px var(--black);
+    margin-left: 2rem;
+    padding-left: 5rem;
+    width: 100%;
+}
+
+#answerSheetBuilder .time {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#answerSheetBuilder .time p {
+    text-transform: uppercase;
+}
+
+#answerSheetBuilder .time input {
+    width: 5ch;
+    text-align: right;
+}
+
+#answerSheetBuilder .items-count {
+    color: var(--gray2);
+}
+
+#answerSheetBuilder .item-no {
+    font-weight: 500;
+}
+
+#answerSheetBuilder .select {
+    font-size: 0.8em;
+    text-transform: capitalize;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border: solid 1px transparent;
+    color: var(--gray);
+}
+
+#answerSheetBuilder .select:hover {
+    border-radius: 5px;
+    background-color: var(--gray7);
+    border-color: var(--gray6);
+    padding: 0.5em;
+    margin: -0.5em;
+}
+
+#answerSheetBuilder .select::after {
+    content: "\E0E5";
+    font-family: 'Icon';
+    margin-left: 1ch;
+    opacity: 0;
+}
+
+#answerSheetBuilder .select:hover::after {
+    opacity: 1;
+}
+
+#answerSheetBuilder .item {
+    margin: 2rem 0;
+}
+
+#answerSheetBuilder .item .item-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+#answerSheetBuilder .item .item-heading button {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+#answerSheetBuilder button.secondary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1ch;
+    float: right;
+    font-weight: bold;
+}
+
+#answerSheetBuilder .corousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 2rem;
+}
+
+#answerSheetBuilder .corousel button {
+    font-family: 'Icon';
+    margin: 0;
+    padding: 0;
+    color: var(--black);
+    background-color: transparent;
+}
+
+#answerSheetBuilder .corousel .choice {
+    border: solid 1px var(--gray);
+    padding: 2rem;
+}
+
+#answerSheetBuilder .multiple-choiced .choice,
+#testProper .multiple-choiced .choice {
+    display: none;
+    flex-direction: row;
+    gap: 1ch;
+}
+
+#testProper .multiple-choiced .choice {
+    display: flex;
+}
+
+#answerSheetBuilder .multiple-choiced .choice div,
+#testProper .multiple-choiced .choice div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+}
+
+#answerSheetBuilder .multiple-choiced .choice div::after,
+#testProper .multiple-choiced .choice div::after {
+    content: '';
+    display: inline-block;
+    border: solid 1px var(--black);
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+}
+
+#answerSheetBuilder .multiple-choiced .choice div.blackened::after,
+#testProper .multiple-choiced .choice div.blackened::after {
+    background-color: var(--black);
+}
+
+
+.icon {
+    font-family: 'Icon';
+}
+
+#testProper .sections {
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: white;
+    border-bottom: solid 1px var(--gray);
+}
+
+#testProper .section-heading {
+    text-align: center;
+}
+
+#testProper .timer {
+    text-align: center;
+    margin: 2em 0;
+}
+
+#testProper .multiple-choiced {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1ch;
+}
+
+.item-no {
+    font-weight: bold;
+}
+
